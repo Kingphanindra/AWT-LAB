@@ -1,0 +1,19 @@
+<h2 class="my-4">Total No Of Students</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Branch</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students; let i = index">
+      <td>{{student.name}}</td>
+      <td>{{student.age}}</td>
+      <td>{{student.branch}}</td>
+      <td><button class="btn btn-danger" (click)="onDelete(i)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

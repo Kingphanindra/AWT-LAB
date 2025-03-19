@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()" class="mb-4">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="student.name" name="name" required>
+  </div>
+  <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input type="text" class="form-control" id="age" [(ngModel)]="student.age" name="age" required>
+  </div>
+  <div class="mb-3">
+    <label for="branch" class="form-label">Branch</label>
+    <input type="text" class="form-control" id="branch" [(ngModel)]="student.branch" name="branch" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Student</button>
+</form>

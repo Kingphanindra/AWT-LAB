@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { StudentListComponent } from './student-list.component';
+import { StudentFormComponent } from './student-form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, StudentListComponent, StudentFormComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -14,11 +17,15 @@ export class AppComponent {
     { name: "Karthik", age: 20, branch: "IT" },
     { name: "Jayanth", age: 50, branch: "IT" },
     { name: "Md Khader", age: 21, branch: "IT" },
-    { name: "Paarthiv", age: 22, branch: "IT" }
+    { name: "Paarthiv", age: 22, branch: "IT" },
+    { name: "Charan", age: 20, branch: "CSE" }
   ];
-  isTrue = false;
 
-  toggle() {
-    this.isTrue = !this.isTrue;
+  addStudent(student: any) {
+    this.students.push(student);
+  }
+
+  deleteStudent(index: number) {
+    this.students.splice(index, 1);
   }
 }

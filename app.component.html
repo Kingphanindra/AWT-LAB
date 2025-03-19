@@ -1,3 +1,4 @@
+\Student\src\app\app.component.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,42 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Students</title>
 </head>
-<body>
-  <h1>List Of {{title}}</h1>
-  <h2>Total No Of Students</h2>
-  <table border="1px solid black">
-    <tr *ngFor =" let student of students">
-      <td>{{student.name}}</td>
-      <td>{{student.age}}</td>
-      <td>{{student.branch}}</td>
-    </tr>
-  </table>
-  <h3>Only Students of  IT</h3>
-  
-  <table border="1px solid black" *ngFor =" let student of students">
-    <div *ngIf="student.branch=='IT'">
-      <tr>
-        <td>{{student.name}}</td>
-        <td>{{student.age}}</td>
-        <td>{{student.branch}}</td>
-      </tr>
-  </div>
-  </table>
-
-  <input>
-  <div>
-    <h1>{{ title }}</h1>
-    <button (click)="toggle()">Toggle</button>
-    <p>{{ isTrue }}</p>
-    
-    <ul>
-      <li *ngFor="let student of students">
-        {{ student.name }} - {{ student.age }} - {{ student.branch }}
-      </li>
-    </ul>
-  </div>
-  
-
+<body class="container">
+  <h1 class="my-4">{{ title }}</h1>
+  <app-student-form (addStudent)="addStudent($event)"></app-student-form>
+  <app-student-list [students]="students" (deleteStudent)="deleteStudent($event)"></app-student-list>
 </body>
 </html>
-
